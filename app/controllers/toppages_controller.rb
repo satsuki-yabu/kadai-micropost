@@ -4,7 +4,7 @@ class ToppagesController < ApplicationController
     if logged_in?
       @micropost = current_user.microposts.build  
       @microposts = current_user.feed_microposts.order(id: :desc).page(params[:page])
-      @users = User.order(id: :desc).page(params[:page]).per(25)
+      @users = User.order(id: :desc).page(params[:page]).per(2)
     end 
   end
 end
